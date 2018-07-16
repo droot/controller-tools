@@ -48,6 +48,14 @@ metadata:
   name: system
 ---
 apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sa
+  namespace: system
+  labels:
+    controller-tools.k8s.io: "1.0"
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: controller-manager-service
@@ -71,6 +79,7 @@ metadata:
     control-plane: controller-manager
     controller-tools.k8s.io: "1.0"
 spec:
+  serviceAccountName: sa
   selector:
     matchLabels:
       control-plane: controller-manager

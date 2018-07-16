@@ -58,6 +58,13 @@ func (o *ManifestOptions) Namespace() string {
 	return "system"
 }
 
+// ServiceAccount returns the service account name to be used in the RBAC
+// manifests.
+func (o *ManifestOptions) ServiceAccount() string {
+	// TODO(droot): define this as a constant and share it with scaffold pkg.
+	return "sa"
+}
+
 // Validate validates the input options.
 func (o *ManifestOptions) Validate() error {
 	if _, err := os.Stat(o.InputDir); err != nil {
@@ -133,7 +140,7 @@ func getClusterRoleBindingManifest(o *ManifestOptions) ([]byte, error) {
 		},
 		Subjects: []rbacv1.Subject{
 			{
-				Name:      "default",
+				Name:      o.ServiceAccount(),
 				Namespace: o.Namespace(),
 				Kind:      "ServiceAccount",
 			},
