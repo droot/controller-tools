@@ -46,6 +46,18 @@
   version = "v1.0.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/go-logr/logr"
+  packages = ["."]
+  revision = "9fb12b3b21c5415d16ac18dc5cd42c1cfdd40c4e"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/go-logr/zapr"
+  packages = ["."]
+  revision = "7536572e8d55209135cd5e7ccf7fce43dca217ab"
+
+[[projects]]
   name = "github.com/go-openapi/jsonpointer"
   packages = ["."]
   revision = "3a0015ad55fa9873f41605d3e8f28cd279c32ab2"
@@ -103,6 +115,12 @@
   version = "v1.1.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/google/btree"
+  packages = ["."]
+  revision = "4030bb1f1f0c35b30ca7009e9ebd06849dd45306"
+
+[[projects]]
   name = "github.com/google/go-github"
   packages = ["github"]
   revision = "e48060a28fac52d0f1cb758bc8b87c07bac4a87d"
@@ -130,6 +148,15 @@
   version = "v0.1.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/gregjones/httpcache"
+  packages = [
+    ".",
+    "diskcache"
+  ]
+  revision = "9cad4c3443a7200dd6400aef47183728de563a38"
+
+[[projects]]
   name = "github.com/hashicorp/golang-lru"
   packages = [
     ".",
@@ -153,11 +180,6 @@
     "json/token"
   ]
   revision = "ef8a98b0bbce4a65b5aa4c368430a80ddc533168"
-
-[[projects]]
-  name = "github.com/howeyc/gopass"
-  packages = ["."]
-  revision = "bf9dde6d0d2c004a008c27aaee91170c786f6db8"
 
 [[projects]]
   name = "github.com/imdario/mergo"
@@ -281,6 +303,18 @@
   version = "v1.2.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/petar/GoLLRB"
+  packages = ["llrb"]
+  revision = "53be0d36a84c2a886ca057d34b6aa4468df9ccb4"
+
+[[projects]]
+  name = "github.com/peterbourgon/diskv"
+  packages = ["."]
+  revision = "5f041e8faa004a95c88a202771f4cc3e991971e6"
+  version = "v2.0.1"
+
+[[projects]]
   name = "github.com/pkg/errors"
   packages = ["."]
   revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
@@ -324,17 +358,6 @@
   packages = ["."]
   revision = "b5e8006cbee93ec955a89ab31e0e3ce3204f3736"
   version = "v1.0.2"
-
-[[projects]]
-  branch = "features/structed"
-  name = "github.com/thockin/logr"
-  packages = [
-    ".",
-    "impls/zaplogr",
-    "testing"
-  ]
-  revision = "087cf386d618a79ac96d86ba65fa7d0c44fce2a3"
-  source = "https://github.com/directxman12/logr.git"
 
 [[projects]]
   name = "go.uber.org/atomic"
@@ -506,13 +529,14 @@
     "rbac/v1alpha1",
     "rbac/v1beta1",
     "scheduling/v1alpha1",
+    "scheduling/v1beta1",
     "settings/v1alpha1",
     "storage/v1",
     "storage/v1alpha1",
     "storage/v1beta1"
   ]
-  revision = "73d903622b7391f3312dcbac6483fed484e185f8"
-  version = "kubernetes-1.10.0"
+  revision = "072894a440bdee3a891dea811fe42902311cd2a3"
+  version = "kubernetes-1.11.0"
 
 [[projects]]
   name = "k8s.io/apiextensions-apiserver"
@@ -523,8 +547,8 @@
     "pkg/client/clientset/clientset/scheme",
     "pkg/client/clientset/clientset/typed/apiextensions/v1beta1"
   ]
-  revision = "4347b330d0ff094db860f2f75fa725b4f4b53618"
-  version = "kubernetes-1.10.1"
+  revision = "3de98c57bc05a81cf463e0ad7a0af4cec8a5b510"
+  version = "kubernetes-1.11.0"
 
 [[projects]]
   name = "k8s.io/apimachinery"
@@ -571,14 +595,13 @@
     "third_party/forked/golang/json",
     "third_party/forked/golang/reflect"
   ]
-  revision = "302974c03f7e50f16561ba237db776ab93594ef6"
-  version = "kubernetes-1.10.0"
+  revision = "103fd098999dc9c0c88536f5c9ad2e5da39373ae"
+  version = "kubernetes-1.11.0"
 
 [[projects]]
   name = "k8s.io/client-go"
   packages = [
     "discovery",
-    "dynamic",
     "kubernetes",
     "kubernetes/scheme",
     "kubernetes/typed/admissionregistration/v1alpha1",
@@ -605,17 +628,20 @@
     "kubernetes/typed/rbac/v1alpha1",
     "kubernetes/typed/rbac/v1beta1",
     "kubernetes/typed/scheduling/v1alpha1",
+    "kubernetes/typed/scheduling/v1beta1",
     "kubernetes/typed/settings/v1alpha1",
     "kubernetes/typed/storage/v1",
     "kubernetes/typed/storage/v1alpha1",
     "kubernetes/typed/storage/v1beta1",
     "pkg/apis/clientauthentication",
     "pkg/apis/clientauthentication/v1alpha1",
+    "pkg/apis/clientauthentication/v1beta1",
     "pkg/version",
     "plugin/pkg/client/auth/exec",
     "plugin/pkg/client/auth/gcp",
     "rest",
     "rest/watch",
+    "restmapper",
     "third_party/forked/golang/template",
     "tools/auth",
     "tools/cache",
@@ -630,6 +656,7 @@
     "transport",
     "util/buffer",
     "util/cert",
+    "util/connrotation",
     "util/flowcontrol",
     "util/homedir",
     "util/integer",
@@ -637,8 +664,8 @@
     "util/retry",
     "util/workqueue"
   ]
-  revision = "989be4278f353e42f26c416c53757d16fcff77db"
-  version = "kubernetes-1.10.1"
+  revision = "7d04d0e2a0a1a4d4a1cd6baa432a2301492e4e65"
+  version = "v8.0.0"
 
 [[projects]]
   branch = "master"
@@ -670,7 +697,7 @@
   revision = "f08db293d3ef80052d6513ece19792642a289fea"
 
 [[projects]]
-  branch = "master"
+  branch = "k8s-1.11-with-clean-deps"
   name = "sigs.k8s.io/controller-runtime"
   packages = [
     "pkg/cache",
@@ -696,7 +723,8 @@
     "pkg/source",
     "pkg/source/internal"
   ]
-  revision = "eb6b5deb0f5f482cb4285551838e1735582e3b27"
+  revision = "95db80aae77dffa55b50f824a92db481dcdb83cb"
+  source = "github.com/droot/controller-runtime"
 
 [[projects]]
   name = "sigs.k8s.io/testing_frameworks"
@@ -709,6 +737,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "d192fa3d57784ad3e94407de4d660f0583cdd077316429c21a33013809009910"
+  inputs-digest = "b3969fc0f5bc3c5e294c3e227ee75bc114668a10dc6ca36e33f73a2799237a61"
   solver-name = "gps-cdcl"
   solver-version = 1
